@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forum for Web Application Development!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+
+        <script type="text/javascript" src="js/jquery.js"></script> 
+         <script type="text/javascript" src="js/my_jquery.js"></script>
+	</head>
+	<body>
+		<h1>My forum</h1>
+        <h4>By the students, of the students, for the students</h4>
+    	<div id="wrapper">
+    	  	<div id="menu">
+        		<a class="item" href="home.html">Home</a> 
+        		<a onclick="document.getElementById('createTopicModal').style.display='block'" class="item" id="createTopicTab">Start a topic</a> 
+                <a class="item" id="logoutTab2">Log Out!</a>
+
+        		<span id="userbar"><!-- Not yet loggedin is default, logout is innerhtml -->
+          		</span>
+    		</div>
+        	<div id="content">
+
+                <div id="createTopicModal" class="modal">
+                <span onclick="document.getElementById('createTopicModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                    <form class="modal-content" id="createTopicForm">
+                        <div class="imgcontainer">
+                            <img src="images/mic.png" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <label><b>Topic Name</b></label>
+                            <input type="text" placeholder="Enter your Topic Name" name="topicName" id="newTopicName" required>
+
+                            <p><b>Category</b></br>
+                                <Input type="radio" name="category" value="acad" checked="checked"/>Academic</br>
+                                <Input type="radio" name="category" value="admin" />Administrative</br>
+                                </p>
+
+                            <label><b>Topic Content</b></label></br>
+                            <textarea rows="4" cols="50" placeholder="Content" name="topicContent" id="newTopicContent" required></textarea>
+
+                            <button type="create" id="addTopic">Add Topic</button>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <h1 style="color:black;">Table of Contents</h1>
+
+                 <table id="mainTable">
+                    <tr>
+                        <th class="leftpart">Category</th>
+                        <th class="rightpart">Last Topic</th>
+                    </tr>
+                    <tr>
+                        <td><a id="acadTab">Academic Matters</a></td>
+                        <td><span id="lastPostAcad"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><a id="adminTab">Administrative Issues</a></td>
+                        <td id="lastPostAdmin"></td>
+                    </tr>
+                </table> 
+                            <table id="acadTable">
+
+                            </table>
+                            <table id="adminTable">
+                                
+                            </table>
+
+    		</div><!-- content -->
+		</div><!-- wrapper -->
+		<div id="footer">Created by Teo</div>
+	</body>
+</html>
+
+
+</html>

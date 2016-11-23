@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forum for Web Application Development!</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+
+        <script type="text/javascript" src="js/jquery.js"></script> 
+         <script type="text/javascript" src="js/my_jquery.js"></script>
+	</head>
+	<body>
+		<h1>My forum</h1>
+        <h4>By the students, of the students, for the students</h4>
+    	<div id="wrapper">
+    	  	<div id="menu">
+        		<a class="item" href="home.html" id="homeTab">Home</a> 
+        		<!-- <a class="item" href="createTopic.html">Create a topic</a> 
+        		<a class="item" href="createCat.html">Create a category</a> -->
+        		<a onclick="document.getElementById('aboutModal').style.display='block'" class="item" id="aboutUsTab">About Us!</a>
+        		<a onclick="document.getElementById('registerModal').style.display='block'" class="item" id="registerTab">Register!</a>
+        		<a onclick="document.getElementById('loginHomeModal').style.display='block'" class="item" id="loginTab">Login!</a>
+                <a class="item" id="logoutTab">Log out!</a>
+
+
+        		<span id="userbar">
+          		</span>
+    		</div>
+        	<div id="content">
+        		<img src='images/ntu.jpg' class='logo' >
+
+                <!-- Start of About Us Modal Content -->
+                <div id="aboutModal" class="modal">
+                <span onclick="document.getElementById('aboutModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <!-- About Us Modal Content -->
+                    <form class="modal-content">
+                        <h2 style="text-align:center">About us!</h2>
+
+                        <div id="right-login">
+                            <img src='images/graduate.jpg' class='logo' style="border: 1px solid #000;">
+                        </div>
+
+                        <div id="left-login">
+                        </br></br>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo.</p>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1;" >
+                            <button type="button" onclick="document.getElementById('aboutModal').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Start of Login Main Modal Content -->
+                <div id="loginHomeModal" class="modal">
+                <span onclick="document.getElementById('loginHomeModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <!-- Login Main Modal Content -->
+                    <form class="modal-content">
+                        <h2 style="text-align:center">Logging in as...</h2>
+
+                        <div class="imgcontainer" style="display: inline-block;" >
+                            <img src="images/avatar.jpg" alt="Avatar" class="avatar"></br>
+                            <a onclick="document.getElementById('loginStudentModal').style.display='block'"  class="item"> 
+                            Student
+                            </a>
+
+                        </div>                      
+                        <div class="imgcontainer" style="display: inline-block;" >
+                            <img src="images/avatarProf.png" alt="Avatar" class="avatar"></br>
+
+                            <a onclick="document.getElementById('loginProfModal').style.display='block'" class="item">
+                            Professor
+                            </a>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1;" >
+                            <button type="button" onclick="document.getElementById('loginHomeModal').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- End of Login Main Modal Content -->
+
+                <div id="loginStudentModal" class="modal">
+                <span onclick="document.getElementById('loginStudentModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <!-- Login Student Modal Content -->
+                    <form class="modal-content">
+                        <div class="imgcontainer">
+                            <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <label><b>Matriculation Number</b></label>
+                            <input type="text" placeholder="Enter Matriculation Number" name="uname" id="studentUser" required>
+
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" id="studentPassword" required>
+
+                            <button type="button" id="loginStudentButton">Login</button>
+                            <input type="checkbox" checked="checked" id="rememberMe">Remember me
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('loginStudentModal').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                 <!-- End of Login Student Main Modal Content -->
+
+                <div id="loginProfModal" class="modal">
+                <span onclick="document.getElementById('loginProfModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                <!-- Login Prof Modal Content -->
+                    <form class="modal-content">
+                        <div class="imgcontainer">
+                            <img src="images/avatarProf.png" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <label><b>Staff Number</b></label>
+                            <input type="text" placeholder="Enter Staff Number" name="uname" id="profUser" required>
+
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" id="profPassword" required>
+
+                            <button type="button" id="loginProfButton">Login</button>
+                            <input type="checkbox" checked="checked">Remember me
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('loginProfModal').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Registration Modal Content -->
+                <div id="registerModal" class="modal">
+                <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+                    <form class="modal-content" id="registerForm">
+                        <div class="imgcontainer">
+                            <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <label><b>Matriculation Number</b></label>
+                            <input type="text" placeholder="Enter Matriculation Number" name="uname" id="regUser" required>
+
+                            <label><b>Password</b></label>
+                            <input type="password" placeholder="New Password" name="psw" id="regPassword" required>
+
+                            <label><b>Re-enter Password</b></label>
+                            <input type="password" placeholder="Enter Password again" name="psw2" id="regPassword2" required>
+
+                            <span id="errorMessage"></span>
+                            <button type="register" id="registerButton">Register</button>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="document.getElementById('registerModal').style.display='none'" class="cancelbtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+    		</div><!-- content -->
+		</div><!-- wrapper -->
+		<div id="footer">Created by Teo</div>
+	</body>
+</html>
+
+
+</html>
